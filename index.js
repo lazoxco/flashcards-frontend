@@ -20,6 +20,5 @@ function showCards(cardData){
     div.appendChild(cardDiv)
 
     cardsDiv.appendChild(div)
-    debugger
   })
 }
