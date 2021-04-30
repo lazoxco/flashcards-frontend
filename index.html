@@ -21,7 +21,33 @@
 
       </div>
     </div>
-    
+
+
+    <div class="container text-center">
+      <h2>Create a Flashcard</h2>
+      <form id="flashcard-form">
+        <div>
+          <label for="flashcard-question"><strong>Question</strong></label><br>
+          <input type="text" name="question" id="question">
+        </div>
+
+        <div>
+          <label for="flashcard-answer"><strong>Answer</strong></label><br>
+          <input type="text" name="answer" id="answer">
+        </div>
+
+        <div>
+            <label for="flashcard-topic"><strong>Topic</strong></label><br>
+            <input type="text" name="topic" id="topic">
+        </div>
+
+        <div class="form-btn">
+          <input class="btn btn-primary" type="submit" value="Create">
+        </div>
+      </form>
+    </div>
+
+
     <script src="src/flashcard.js" type="text/javascript"></script>
     <script src="src/flashcardApi.js" type="text/javascript" ></script>
     <script src="index.js" async defer></script>
