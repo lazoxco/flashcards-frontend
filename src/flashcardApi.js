@@ -9,7 +9,6 @@ class FlashcardApi {
       cards.forEach(card => {
         const c = new Flashcard(card.id, card.question, card.answer, card.topic_id)
         c.addToDom()
-        debugger
       })
     })
   }

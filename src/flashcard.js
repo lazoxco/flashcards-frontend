@@ -9,6 +9,7 @@ class Flashcard {
 
     this.element = document.createElement('div')
     this.element.id = `flashcard-${id}`
+    this.element.classList = 'col-lg-4 col-md-6'
     // this.dataset.id = id
 
     Flashcard.all.push(this)
@@ -16,7 +17,9 @@ class Flashcard {
 
   showCard(){
     this.element.innerHTML = `
-    <div class='card'>${this.question}</div>
+    <div class='card'>
+      <h2>${this.question}</h2>
+    </div>
     `
     return this.element
   }
