@@ -18,7 +18,7 @@ class FlashcardApi {
     const formData = {
       question: questionInput.value,
       answer: answerInput.value,
-      topic_id: drowpdown.value
+      topic_id: topicDropdown.value
     }
 
     constConfigObj = {
@@ -26,13 +26,14 @@ class FlashcardApi {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json"
-      }
+      },
+      body: JSON.stringify(formData)
     }
 
     fetch(this.baseURL, configObj)
     .then(resp => resp.json())
     .then(card => {
-      const flashcard = card
+      const c = new Flashcard(card.id, card.question, card.answer, card.topic_id)
     })
   }
 }
