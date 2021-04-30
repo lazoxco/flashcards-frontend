@@ -10,7 +10,6 @@ class Flashcard {
     this.element = document.createElement('div')
     this.element.id = `flashcard-${id}`
     this.element.classList = 'col-lg-4 col-md-6'
-    // this.dataset.id = id
 
     Flashcard.all.push(this)
   }
@@ -19,7 +18,10 @@ class Flashcard {
     this.element.innerHTML = `
     <div class='card'>
       <h2>${this.question}</h2>
+      <button class="answer btn btn-light" data-id="${this.id}">View Answer</button>
     </div>
+    <button class="edit btn btn-secondary" data-id="${this.id}">Edit</button>
+    <button class="delete btn btn-danger" data-id="${this.id}">Delete</button>
     `
     return this.element
   }
