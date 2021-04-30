@@ -15,6 +15,20 @@ class FlashcardApi {
 
   static createFlashcard(){
 
+    const formData = {
+      question: questionInput.value,
+      answer: answerInput.value,
+      topic_id: drowpdown.value
+    }
+
+    constConfigObj = {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      }
+    }
+
     fetch(this.baseURL, configObj)
     .then(resp => resp.json())
     .then(card => {
