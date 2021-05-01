@@ -11,11 +11,11 @@ class Topic {
     Topic.all.push(this)
   }
 
-  attachToDom(){
-    Topic.topicContainer.append(this.renderTopic)
+  renderTopic(){
+    return "Rendering a topic..."
   }
 
-  renderTopic(){
-    return "Hello world"
+  attachToDom(){
+    Topic.topicContainer.append(this.renderTopic())
   }
 }
