@@ -17,3 +17,4 @@ function handleFormSubmit(event){
 }
 
 FlashcardApi.getFlashcards()
+TopicApi.getTopics()
