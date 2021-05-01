@@ -12,7 +12,9 @@ class Topic {
   }
 
   renderTopic(){
-    return "Rendering a topic..."
+    debugger
+    this.topicBtn.innerText = this.name
+    return this.topicBtn
   }
 
   attachToDom(){
