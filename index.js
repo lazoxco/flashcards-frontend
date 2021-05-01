@@ -4,9 +4,9 @@ const flashcardsURL = baseURL + '/flashcards'
 const cardsDiv = document.getElementById('card-list')
 
 const form = document.getElementById('flashcard-form')
-const questionInput = document.getElementById('question')
-const answerInput = document.getElementById('anwser')
-const topicDropdown = document.getElementById('topic')
+const questionInput = document.getElementById('question-input')
+const answerInput = document.getElementById('answer-input')
+const topicDropdown = document.getElementById('topic-dropdown')
 
 form.addEventListener('submit', handleFormSubmit)
 

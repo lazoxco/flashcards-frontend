@@ -14,14 +14,13 @@ class FlashcardApi {
   }
 
   static createFlashcard(){
-
     const formData = {
       question: questionInput.value,
       answer: answerInput.value,
       topic_id: topicDropdown.value
     }
 
-    constConfigObj = {
+    const configObj = {
       method: 'POST',
       headers: {
         "Content-Type": "application/json",
@@ -29,11 +28,16 @@ class FlashcardApi {
       },
       body: JSON.stringify(formData)
     }
-
+    
     fetch(this.baseURL, configObj)
-    .then(resp => resp.json())
-    .then(card => {
+    .then(resp => {
+      debugger
+    })
+    .then(data => {
+      const card = data
       const c = new Flashcard(card.id, card.question, card.answer, card.topic_id)
+
+      c.addToDom()
     })
   }
 }
