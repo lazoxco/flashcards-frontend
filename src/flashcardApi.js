@@ -31,7 +31,7 @@ class FlashcardApi {
     
     fetch(this.baseURL, configObj)
     .then(resp => {
-      debugger
+      console.log(resp)
     })
     .then(data => {
       const card = data

@@ -6,7 +6,8 @@ class TopicApi {
     .then(resp => resp.json())
     .then(topics => {
       topics.forEach(topic => {
-        console.log(topic)
+        const t = new Topic(topic.id, topic.name)
+        t.attachToDom()
       })
     })
   }
