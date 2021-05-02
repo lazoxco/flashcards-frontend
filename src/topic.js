@@ -7,8 +7,10 @@ class Topic {
     this.id = id
     this.name = name
     this.active = false
-    this.topicBtn = document.createElement('button')
-    this.topicBtn.classList = 'btn btn-link topic-btn'
+    this.element = document.createElement('button')
+    this.element.classList = 'btn btn-link topic-btn'
+
+    this.element.addEventListener('click', this.setActiveTopic)
 
     Topic.all.push(this)
   }
@@ -18,24 +20,13 @@ class Topic {
   }
 
   showTopic(){
-    this.topicBtn.innerText = this.name
-    this.topicBtn.id = `topic-${this.id}`
-    return this.topicBtn
+    this.element.innerText = this.name
+    this.element.id = `topic-${this.id}`
+    return this.element
   }
 
   attachToDom(){
     Topic.topicContainer.append(this.showTopic())
-  }
-
-  addToDropDown(){
-    const option = document.createElement('option')
-    option.value = this.id 
-    option.innerText = this.name
-    topicDropdown.append(option)
-  }
-
-  addListener(){
-    this.element.addEventListener('click', this.setActiveTopic)
   }
 
   setActiveTopic = (e) => {
@@ -52,5 +43,12 @@ class Topic {
       }
     })
     Flashcard.filterByTopic(activeTopic)
+  }
+
+  addToDropDown(){
+    const option = document.createElement('option')
+    option.value = this.id 
+    option.innerText = this.name
+    topicDropdown.append(option)
   }
 }

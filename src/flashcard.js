@@ -75,7 +75,19 @@ class Flashcard {
     FlashcardApi.deleteCard(this.id)
   }
 
- static filterByTopic(topic){
-   console.log(topic)
+ static filterByTopic(activeTopic){
+   if(activeTopic){
+     for(const card of Flashcard.all){
+       if(card.topicId === parseInt(activeTopic.id)){
+         card.element.style.display = ""
+       } else {
+         card.element.style.display = "none"
+       }
+     }
+   } else {
+     for(const card of Flashcard.all){
+       card.element.style.display = ""
+     }
+   }
  }
 }
