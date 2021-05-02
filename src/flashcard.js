@@ -11,6 +11,8 @@ class Flashcard {
     this.element.id = `flashcard-${id}`
     this.element.classList = 'col-lg-4 col-md-6'
 
+    this.element.addEventListener('click', this.handleItemClick)
+
     Flashcard.all.push(this)
   }
 
@@ -30,6 +32,15 @@ class Flashcard {
     cardsDiv.appendChild(this.showCard())
   }
 
-  
+  handleItemClick = (e) => {
+    if (e.target.innerText === "Edit"){
+      this.createEditFields(e.target)
+    }
+  }
+
+  createEditFields = (editBtn) => {
+     console.log("in editField!!! Hello world.")
+     debugger
+  }
 
 }
