@@ -18,8 +18,9 @@ class Flashcard {
 
   showCard(){
     this.element.innerHTML = `
-    <div class='card'>
-      <h2>${this.question}</h2>
+    <div class="card">
+      <h2 class="question">${this.question}</h2>
+      <p class="answer">${this.answer}</p>
       <button class="answer btn btn-light" data-id="${this.id}">View Answer</button>
     </div>
     <button class="edit btn btn-secondary" data-id="${this.id}">Edit</button>
@@ -35,12 +36,27 @@ class Flashcard {
   handleItemClick = (e) => {
     if (e.target.innerText === "Edit"){
       this.createEditFields(e.target)
+      e.target.innerText = "Save"
+    } else if(e.target.innerText === "Save"){
+      this.saveCard()
+      e.target.innerText = "Edit"
     }
   }
 
   createEditFields = (editBtn) => {
-    // TODO: create edit fields
-    //  console.log("in editField!!! Hello world.")    
+    const cardDiv = this.element
+    debugger
+    const div = this.element.querySelector('div')
+    const question = cardDiv.querySelector('.question').innerText
+    const answer = cardDiv.querySelector('.answer').innerText
+
+    div.innerHTML = `
+    <input type="text" name="question" class="edit-question" value="${question}">
+    <input type="text" name="answer" class="edit-answer" value="${answer}">
+    `
   }
 
+  saveCard = () => {
+    debugger
+  }
 }
