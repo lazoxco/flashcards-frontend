@@ -29,16 +29,13 @@ class FlashcardApi {
     }
     
     fetch(this.baseURL, configObj)
-    .then(resp => {
-      console.log(resp)
-    })
+    .then(resp => resp.json())
     .then(data => {
       const card = data
       const c = new Flashcard(card.id, card.question, card.answer, card.topic_id)
-
       c.addToDom()
     })
   }
 
-  
+
 }

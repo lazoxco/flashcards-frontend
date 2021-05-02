@@ -39,8 +39,8 @@ class Flashcard {
   }
 
   createEditFields = (editBtn) => {
-     console.log("in editField!!! Hello world.")
-     debugger
+    // TODO: create edit fields
+    //  console.log("in editField!!! Hello world.")    
   }
 
 }
