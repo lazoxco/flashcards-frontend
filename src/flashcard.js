@@ -59,6 +59,6 @@ class Flashcard {
     this.question = this.element.querySelector('.edit-question').value
     this.answer = this.element.querySelector('.edit-answer').value
     
-    ItemApi.update(this)
+    FlashcardApi.update(this)
   }
 }

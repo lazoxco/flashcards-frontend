@@ -38,6 +38,7 @@ class FlashcardApi {
   }
 
   static update(card){
+    debugger
     const cardInfo = {
       question,
       answer
