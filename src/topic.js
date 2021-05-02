@@ -7,17 +7,18 @@ class Topic {
     this.id = id
     this.name = name
     this.topicBtn = document.createElement('button')
+    this.topicBtn.classList = 'btn btn-link topic-btn'
 
     Topic.all.push(this)
   }
 
-  renderTopic(){
-    debugger
+  showTopic(){
     this.topicBtn.innerText = this.name
+    this.topicBtn.id = `topic-${this.id}`
     return this.topicBtn
   }
 
   attachToDom(){
-    Topic.topicContainer.append(this.renderTopic())
+    Topic.topicContainer.append(this.showTopic())
   }
 }
