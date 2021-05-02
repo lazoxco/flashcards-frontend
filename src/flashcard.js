@@ -42,6 +42,12 @@ class Flashcard {
       e.target.innerText = "Edit"
     } else if(e.target.innerText === "Delete"){
       this.deleteCard()
+    } else if(e.target.innerText === "View Answer"){
+      this.element.querySelector('.answer').style.display = "block"
+      e.target.innerText = "Hide Answer"
+    } else if(e.target.innerText === "Hide Answer"){
+      this.element.querySelector('p.answer').style.display = "none"
+      e.target.innerText = "View Answer"
     }
   }
 
@@ -68,4 +74,8 @@ class Flashcard {
     this.element.remove()
     FlashcardApi.deleteCard(this.id)
   }
+
+ static filterByTopic(topic){
+   console.log(topic)
+ }
 }

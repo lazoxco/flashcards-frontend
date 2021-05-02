@@ -16,3 +16,7 @@ label,
 .topic-btn {
   padding: 0 3%;
 }
+
+p.answer {
+  display: none;
+}

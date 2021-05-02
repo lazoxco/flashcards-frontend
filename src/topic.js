@@ -6,10 +6,15 @@ class Topic {
   constructor(id, name){
     this.id = id
     this.name = name
+    this.active = false
     this.topicBtn = document.createElement('button')
     this.topicBtn.classList = 'btn btn-link topic-btn'
 
     Topic.all.push(this)
+  }
+
+  cards(){
+    return Flashcard.all.filter((card) => card.topicId === parseInt(this.id))
   }
 
   showTopic(){
@@ -27,5 +32,25 @@ class Topic {
     option.value = this.id 
     option.innerText = this.name
     topicDropdown.append(option)
+  }
+
+  addListener(){
+    this.element.addEventListener('click', this.setActiveTopic)
+  }
+
+  setActiveTopic = (e) => {
+    let activeTopic
+    Topic.all.forEach(t => {
+
+      if(t.element === this.element && !this.active){
+        t.element.classList.add('activated')
+        t.active = true
+        activeTopic = t
+      } else {
+        t.element.classList.remove('activated')
+        t.active = false
+      }
+    })
+    Flashcard.filterByTopic(activeTopic)
   }
 }
