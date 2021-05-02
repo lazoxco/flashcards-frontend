@@ -30,4 +30,6 @@ class Flashcard {
     cardsDiv.appendChild(this.showCard())
   }
 
+  
+
 }

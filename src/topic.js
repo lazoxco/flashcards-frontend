@@ -28,4 +28,9 @@ class Topic {
     option.innerText = this.name
     topicDropdown.append(option)
   }
+
+  editField = (editBtn) => {
+     console.log("in editFrield!!! Hello world.")
+     debugger
+  }
 }

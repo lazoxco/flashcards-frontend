@@ -39,4 +39,6 @@ class FlashcardApi {
       c.addToDom()
     })
   }
+
+  
 }
