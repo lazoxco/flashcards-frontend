@@ -45,7 +45,6 @@ class Flashcard {
 
   createEditFields = (editBtn) => {
     const cardDiv = this.element
-    debugger
     const div = this.element.querySelector('div')
     const question = cardDiv.querySelector('.question').innerText
     const answer = cardDiv.querySelector('.answer').innerText
@@ -57,6 +56,9 @@ class Flashcard {
   }
 
   saveCard = () => {
-    debugger
+    this.question = this.element.querySelector('.edit-question').value
+    this.answer = this.element.querySelector('.edit-answer').value
+    
+    ItemApi.update(this)
   }
 }
