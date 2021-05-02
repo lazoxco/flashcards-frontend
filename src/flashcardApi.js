@@ -37,5 +37,21 @@ class FlashcardApi {
     })
   }
 
+  static update(card){
+    const cardInfo = {
+      question,
+      answer
+    }
+
+    const configObj = {
+      method: 'PATCH',
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      },
+      body: JSON.stringify(cardInfo)
+    }
+  }
+
 
 }
