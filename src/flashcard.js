@@ -40,6 +40,8 @@ class Flashcard {
     } else if(e.target.innerText === "Save"){
       this.saveCard()
       e.target.innerText = "Edit"
+    } else if(e.target.innerText === "Delete"){
+      this.deleteCard()
     }
   }
 
@@ -60,5 +62,10 @@ class Flashcard {
     this.answer = this.element.querySelector('.edit-answer').value
     
     FlashcardApi.update(this)
+  }
+
+  deleteCard = (e) => {
+    this.element.remove()
+    FlashcardApi.deleteCard(this.id)
   }
 }

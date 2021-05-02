@@ -38,10 +38,9 @@ class FlashcardApi {
   }
 
   static update(card){
-    debugger
     const cardInfo = {
-      question,
-      answer
+      question: card.question,
+      answer: card.answer
     }
 
     const configObj = {
@@ -52,7 +51,25 @@ class FlashcardApi {
       },
       body: JSON.stringify(cardInfo)
     }
+
+    fetch(`${this.baseURL}/${card.id}`, configObj)
+    .then(resp => resp.json())
+    .then(json => {
+      card.showCard()
+    })
   }
 
-
+  static deleteCard(id){
+    const configObj = {
+      method: 'DELETE',
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      }
+    }
+    
+    fetch(`${this.baseURL}/${id}`, configObj)
+    .then(resp => resp.json())
+    .then(json => alert(json.message))
+  }
 }
