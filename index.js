@@ -6,7 +6,7 @@ const cardsDiv = document.getElementById('card-list')
 const form = document.getElementById('flashcard-form')
 const questionInput = document.getElementById('question-input')
 const answerInput = document.getElementById('answer-input')
-const topicDropdown = document.getElementById('topic-dropdown')
+const topicInput = document.getElementById('topic-input')
 
 form.addEventListener('submit', handleFormSubmit)
 

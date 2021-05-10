@@ -44,11 +44,4 @@ class Topic {
     })
     Flashcard.filterByTopic(activeTopic)
   }
-
-  addToDropDown(){
-    const option = document.createElement('option')
-    option.value = this.id 
-    option.innerText = this.name
-    topicDropdown.append(option)
-  }
 }
