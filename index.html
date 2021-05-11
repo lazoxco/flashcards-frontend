@@ -14,6 +14,7 @@
     <div class="jumbotron text-center">
       <h1>Test your knowledge!</h1>
       <p>Start by selecting a flashcard or create your own.</p>
+      <button id="bg-toggle">Toggle Background</button>
     </div>
     
     <div id="topic-container" class="container text-center">
@@ -41,7 +42,7 @@
 
         <div>
             <label for="topic"><strong>Topic</strong></label><br>
-            <input name="topic" id="topic-input">
+            <select name="topic" id="topic-dropdown"></select>
         </div>
 
         <div class="form-btn">

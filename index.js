@@ -6,7 +6,14 @@ const cardsDiv = document.getElementById('card-list')
 const form = document.getElementById('flashcard-form')
 const questionInput = document.getElementById('question-input')
 const answerInput = document.getElementById('answer-input')
-const topicInput = document.getElementById('topic-input')
+const topicDropdown = document.getElementById('topic-dropdown')
+
+const bgToggle = document.getElementById('bg-toggle')
+bgToggle.addEventListener('click', function(){
+
+  // document.body.style.backgroundColor = 'blue'
+  document.body.classList.toggle('change-color')
+})
 
 form.addEventListener('submit', handleFormSubmit)
 
@@ -18,3 +25,4 @@ function handleFormSubmit(event){
 
 FlashcardApi.getFlashcards()
 TopicApi.getTopics()
+

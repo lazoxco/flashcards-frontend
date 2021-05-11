@@ -8,6 +8,7 @@ class TopicApi {
       topics.forEach(topic => {
         const t = new Topic(topic.id, topic.name)
         t.attachToDom()
+        t.addToDropDown()
       })
     })
   }

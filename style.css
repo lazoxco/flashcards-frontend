@@ -20,3 +20,7 @@ label,
 p.answer {
   display: none;
 }
+
+.change-color {
+  background-color: aqua;
+}

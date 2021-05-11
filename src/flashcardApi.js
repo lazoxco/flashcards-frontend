@@ -16,7 +16,7 @@ class FlashcardApi {
     const formData = {
       question: questionInput.value,
       answer: answerInput.value,
-      topic_id: topicInput.value
+      topic_id: topicDropdown.value
     }
 
     const configObj = {
